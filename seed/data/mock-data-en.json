@@ -224,6 +224,58 @@
                 "version": 1
               },
               {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": "",
+                    "text": "🔄 Data looking broken? Someone may have already played with the site — ",
+                    "version": 1
+                  },
+                  {
+                    "type": "link",
+                    "children": [
+                      {
+                        "type": "text",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "click here to reset the data",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "fields": {
+                      "linkType": "custom",
+                      "newTab": false,
+                      "url": "/reset-data"
+                    },
+                    "format": "",
+                    "indent": 0,
+                    "version": 3
+                  },
+                  {
+                    "type": "text",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": "",
+                    "text": ".",
+                    "version": 1
+                  }
+                ],
+                "direction": "ltr",
+                "format": "center",
+                "indent": 0,
+                "textFormat": 0,
+                "textStyle": "",
+                "version": 1
+              },
+              {
                 "type": "heading",
                 "children": [
                   {
@@ -867,6 +919,56 @@
         "description": "A brief overview of the site's accessibility accommodations and how to contact us.",
         "image": "image_meta.webp"
       }
+    },
+    {
+      "title": "Reset Demo Data",
+      "slug": "reset-data",
+      "_status": "published",
+      "hero": {
+        "type": "lowImpact",
+        "richText": {
+          "root": {
+            "type": "root",
+            "children": [
+              {
+                "type": "heading",
+                "children": [
+                  {
+                    "type": "text",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": "",
+                    "text": "Reset Demo Data",
+                    "version": 1
+                  }
+                ],
+                "direction": "ltr",
+                "format": "center",
+                "indent": 0,
+                "tag": "h1",
+                "version": 1
+              }
+            ],
+            "direction": "ltr",
+            "format": "",
+            "indent": 0,
+            "version": 1
+          }
+        }
+      },
+      "layout": [
+        {
+          "blockType": "htmlEmbed",
+          "blockName": "Reset explanation",
+          "contentHtml": "<section dir=\"ltr\" style=\"max-width:40rem;margin:0 auto;padding:0 1rem 4rem;line-height:1.8;text-align:center\"><p>This site is an open demo anyone can access - anyone who logs into the admin panel (<code>admin@admin.com</code> / <code>admin</code>) can edit, delete, or change content.</p><p>If the data looks broken or unfamiliar, you can reset the entire store back to its original state with a single click.</p><p style=\"background:#fdf2e9;border:1px solid #f0d9bd;border-radius:0.75rem;padding:1rem 1.25rem;color:#7c4a16\"><strong>Note:</strong> this action will erase every change that was made and restore all content (products, orders, pages, settings) to the default data. It cannot be undone, and may take about a minute to complete.</p><p><a href=\"/preview/reset\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"display:inline-block;margin-top:1rem;border-radius:9999px;background:#231f1c;color:white;padding:0.85rem 2rem;font-size:1rem;font-weight:600;text-decoration:none\">Reset the Data Now</a></p></section>"
+        }
+      ],
+      "meta": {
+        "title": "Reset Demo Data | Shoe Store",
+        "description": "Reset the Shoe Store demo site's database back to its original state.",
+        "image": "image_meta.webp"
+      }
     }
   ],
   "siteSettings": {
@@ -929,24 +1031,13 @@
             "url": "/category/new-balance"
           }
         },
-        {
-          "link": {
-            "type": "custom",
-            "label": "Privacy Policy",
-            "url": "/privacy-policy"
-          }
-        },
-        {
-          "link": {
-            "type": "custom",
-            "label": "Accessibility Statement",
-            "url": "/accessibility"
-          }
-        },
+
         {
           "link": {
             "type": "custom",
             "label": "Admin",
+            "newTab": true,
+
             "url": "/admin"
           }
         }
@@ -969,7 +1060,8 @@
               "link": {
                 "type": "custom",
                 "label": "Admin",
-                "url": "/admin"
+                "url": "/admin",
+                "newTab": true
               }
             },
             {
@@ -986,6 +1078,13 @@
                 "label": "Payload",
                 "newTab": true,
                 "url": "https://payloadcms.com/"
+              }
+            },
+            {
+              "link": {
+                "type": "custom",
+                "label": "Reset Data",
+                "url": "/reset-data"
               }
             }
           ]
@@ -1122,6 +1221,7 @@
               "link": {
                 "type": "custom",
                 "label": "Go to admin",
+                "newTab": true,
                 "url": "/admin"
               }
             },

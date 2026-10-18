@@ -715,29 +715,36 @@ export default class SeedService {
     this.ids.productSeoMediaIds = [];
     this.ids.productGalleryMediaIds = [];
 
-    const findProductMedia = (docs: any[], prefix: string) =>
+    const findProductMedia = (docs: any[], imageName: string) =>
       docs
         .filter(
           (doc: any) =>
-            typeof doc.filename === "string" && doc.filename.startsWith(prefix),
-        )
-        .sort((a: any, b: any) =>
-          a.filename.localeCompare(b.filename, undefined, { numeric: true }),
+            this.normalizeMediaLookupValue(doc.alt) ===
+              this.normalizeMediaLookupValue(imageName) ||
+            (typeof doc.filename === "string" &&
+              doc.filename.startsWith(`${imageName}_`)),
         )
         .map((doc: any) => doc.id);
 
     for (const product of this.mockData.products) {
-      const prefix = `${product.image_name}_`;
-      const productSeoMediaIds = findProductMedia(seoMediaDocs, prefix);
-      const productGalleryMediaIds = findProductMedia(galleryMediaDocs, prefix);
+      const productSeoMediaIds = findProductMedia(
+        seoMediaDocs,
+        product.image_name,
+      );
+      const productGalleryMediaIds = findProductMedia(
+        galleryMediaDocs,
+        product.image_name,
+      );
 
-      this.ids.productSeoMediaIds.push(productSeoMediaIds[0] ?? 0);
-      this.ids.productGalleryMediaIds.push(productGalleryMediaIds);
-      if (productSeoMediaIds.length) {
-        (this.ids.seoMediaIdsByVendor[product.vendor] ??= []).push(
-          ...productSeoMediaIds,
-        );
+      if (!productSeoMediaIds.length || !productGalleryMediaIds.length) {
+        throw new Error(`Missing existing media for product ${product.title}`);
       }
+
+      this.ids.productSeoMediaIds.push(productSeoMediaIds[0]);
+      this.ids.productGalleryMediaIds.push(productGalleryMediaIds);
+      (this.ids.seoMediaIdsByVendor[product.vendor] ??= []).push(
+        productSeoMediaIds[0],
+      );
     }
 
     this.payload.logger.info(

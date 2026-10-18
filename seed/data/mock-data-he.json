@@ -224,6 +224,58 @@
                 "version": 1
               },
               {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": "",
+                    "text": "🔄 הנתונים נראים פגומים? ייתכן שמישהו כבר שיחק עם האתר - ",
+                    "version": 1
+                  },
+                  {
+                    "type": "link",
+                    "children": [
+                      {
+                        "type": "text",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "לחצו כאן לאיפוס הנתונים",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "rtl",
+                    "fields": {
+                      "linkType": "custom",
+                      "newTab": false,
+                      "url": "/reset-data"
+                    },
+                    "format": "",
+                    "indent": 0,
+                    "version": 3
+                  },
+                  {
+                    "type": "text",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": "",
+                    "text": ".",
+                    "version": 1
+                  }
+                ],
+                "direction": "rtl",
+                "format": "center",
+                "indent": 0,
+                "textFormat": 0,
+                "textStyle": "",
+                "version": 1
+              },
+              {
                 "type": "heading",
                 "children": [
                   {
@@ -815,6 +867,56 @@
         "description": "מידע קצר על התאמות הנגישות באתר ודרכי יצירת קשר.",
         "image": "image_meta.webp"
       }
+    },
+    {
+      "title": "איפוס נתוני הדגמה",
+      "slug": "reset-data",
+      "_status": "published",
+      "hero": {
+        "type": "lowImpact",
+        "richText": {
+          "root": {
+            "type": "root",
+            "children": [
+              {
+                "type": "heading",
+                "children": [
+                  {
+                    "type": "text",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": "",
+                    "text": "איפוס נתוני הדגמה",
+                    "version": 1
+                  }
+                ],
+                "direction": "rtl",
+                "format": "center",
+                "indent": 0,
+                "tag": "h1",
+                "version": 1
+              }
+            ],
+            "direction": "rtl",
+            "format": "",
+            "indent": 0,
+            "version": 1
+          }
+        }
+      },
+      "layout": [
+        {
+          "blockType": "htmlEmbed",
+          "blockName": "Reset explanation",
+          "contentHtml": "<section dir=\"rtl\" style=\"max-width:40rem;margin:0 auto;padding:0 1rem 4rem;line-height:1.8;text-align:center\"><p>האתר הזה הוא דוגמה (Demo) פתוחה לכולם - כל מי שנכנס ללוח הבקרה (<code>admin@admin.com</code> / <code>admin</code>) יכול לערוך, למחוק או לשנות תוכן.</p><p>אם הנתונים נראים פגומים או לא מוכרים, אפשר לאפס את כל החנות בחזרה למצב המקורי בלחיצת כפתור.</p><p style=\"background:#fdf2e9;border:1px solid #f0d9bd;border-radius:0.75rem;padding:1rem 1.25rem;color:#7c4a16\"><strong>שימו לב:</strong> הפעולה תמחק את כל השינויים שבוצעו ותחזיר את כל התוכן (מוצרים, הזמנות, דפים, הגדרות) לנתוני ברירת המחדל. הפעולה אינה הפיכה, ועשויה לקחת כדקה להשלים.</p><p><a href=\"/preview/reset\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"display:inline-block;margin-top:1rem;border-radius:9999px;background:#231f1c;color:white;padding:0.85rem 2rem;font-size:1rem;font-weight:600;text-decoration:none\">אפס את הנתונים עכשיו</a></p></section>"
+        }
+      ],
+      "meta": {
+        "title": "איפוס נתוני הדגמה | חנות הנעליים",
+        "description": "איפוס מאגר הנתונים של חנות הנעליים בחזרה למצב המקורי.",
+        "image": "image_meta.webp"
+      }
     }
   ],
   "siteSettings": {
@@ -877,25 +979,13 @@
             "url": "/category/ניו-באלאנס"
           }
         },
-        {
-          "link": {
-            "type": "custom",
-            "label": "מדיניות פרטיות",
-            "url": "/privacy-policy"
-          }
-        },
-        {
-          "link": {
-            "type": "custom",
-            "label": "הצהרת נגישות",
-            "url": "/accessibility"
-          }
-        },
+
         {
           "link": {
             "type": "custom",
             "label": "ניהול",
-            "url": "/admin"
+            "url": "/admin",
+            "newTab": true
           }
         }
       ]
@@ -917,7 +1007,8 @@
               "link": {
                 "type": "custom",
                 "label": "ניהול",
-                "url": "/admin"
+                "url": "/admin",
+                "newTab": true
               }
             },
             {
@@ -926,6 +1017,13 @@
                 "label": "Payload",
                 "newTab": true,
                 "url": "https://payloadcms.com/"
+              }
+            },
+            {
+              "link": {
+                "type": "custom",
+                "label": "איפוס נתונים",
+                "url": "/reset-data"
               }
             }
           ]
@@ -1062,7 +1160,8 @@
               "link": {
                 "type": "custom",
                 "label": "למערכת הניהול",
-                "url": "/admin"
+                "url": "/admin",
+                "newTab": true
               }
             },
             {

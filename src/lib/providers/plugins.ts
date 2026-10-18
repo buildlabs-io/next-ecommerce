@@ -67,7 +67,7 @@ if (appConfig.STORAGE_PROVIDER === "vercel") {
   storagePlugin = vercelBlobStorage({
     enabled: !!appConfig.BLOB_TOKEN,
     token: appConfig.BLOB_TOKEN,
-    addRandomSuffix: true,
+    addRandomSuffix: false,
     collections: createStorageCollections((collection) => ({
       prefix: storagePrefix(collection),
       ...(appConfig.STORAGE_URL ? { disablePayloadAccessControl: true } : {}),
